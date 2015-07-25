@@ -4,7 +4,7 @@ project(boostBuilder)
 
 include(ExternalProject)
 
-getCachedUrl(http://freefr.dl.sourceforge.net/boost/boost_1_57_0.tar.gz CACHED_URL)
+getCachedUrl(http://freefr.dl.sourceforge.net/project/boost/boost/1.57.0/boost_1_57_0.tar.gz CACHED_URL)
 
 string(TOLOWER "${CMAKE_BUILD_TYPE}" BUILD_TYPE)
 set(BOOST_BUILD_TYPE debug)
