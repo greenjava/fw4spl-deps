@@ -35,53 +35,53 @@ before_script:
 
 script: 
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make jpeg/fast jpeg.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make zlib/fast zlib.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make tiff/fast tiff.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libpng/fast libpng.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libiconv/fast libiconv.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libxml/fast libxml.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make expat/fast expat.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make python/fast python.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make boost/fast boost.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make freetype/fast freetype.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make icu4c/fast icu4c.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make numpy/fast numpy.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make qt/fast qt.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make vtk/fast vtk.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make vxl/fast vxl.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make gdcm/fast gdcm.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make itk/fast itk.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make camp/fast camp.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make cppunit/fast cppunit.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make ann/fast ann.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make dcmtk/fast dcmtk.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make cryptopp/fast cryptopp.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make tetgen/fast tetgen.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make json-spirit/fast json-spirit.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make glm/fast glm.log
-  - $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build
  
