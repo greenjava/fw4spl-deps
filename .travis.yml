@@ -40,8 +40,8 @@ before_script:
 script: 
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make jpeg/fast jpeg.log
   - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/jpeg
-  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make zlib/fast zlib.log
-  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/zlib
+  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make zlib/fast zlib.log
+  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/zlib
   #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make tiff/fast tiff.log
   #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/tiff
   #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libpng/fast libpng.log
