@@ -14,7 +14,7 @@ addons:
     - libxi-dev
     - libasound2-dev
     - libgstreamer-plugins-base0.10-dev
-    - lftp
+    - curl
 branches:
     only:
         - fw4spl_0.10.2
