@@ -22,7 +22,7 @@ compiler:
 
 before_script:
   - git clone https://gist.github.com/f6148aa0366124d930c5.git script
-  - chmod a+x script/make-travis.sh
+  - chmod a+x script/cmd-travis.sh
   - wget -q http://www.cmake.org/files/v3.3/cmake-3.3.0-Linux-x86_64.tar.gz -O /tmp/cmake-3.3.0-Linux-x86_64.tar.gz
   - tar -xvf /tmp/cmake-3.3.0-Linux-x86_64.tar.gz > /dev/null
   - export PATH=$PWD/cmake-3.3.0-Linux-x86_64/bin/:$PATH
@@ -31,4 +31,55 @@ before_script:
   - cd $TRAVIS_BUILD_DIR/build
   - cmake $TRAVIS_BUILD_DIR -DCMAKE_INSTALL_PREFIX=$TRAVIS_BUILD_DIR/install -DCMAKE_BUILD_TYPE=Debug
 
-script: $TRAVIS_BUILD_DIR/script/make-travis.sh
+script: 
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make jpeg/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/jpeg
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make zlib/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/zlib
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make tiff/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/tiff
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make libpng/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/libpng
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make libiconv/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/libiconv
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make libxml/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/libxml
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make expat/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/expat
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make python/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/python
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make boost/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/boost
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make freetype/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/freetype
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make icu4c/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/icu4c
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make numpy/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/numpy
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make qt/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/qt
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make vtk/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/vtk
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make vxl/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/vxl
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make gdcm/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/gdcm
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make itk/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/itk
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make camp/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/camp
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make cppunit/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/cppunit
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make ann/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/ann
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make dcmtk/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/dcmtk
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make cryptopp/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/cryptopp
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make tetgen/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/tetgen
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make json-spirit/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/json-spirit
+  - $TRAVIS_BUILD_DIR/script/cmd-travis.sh make glm/fast
+  - rm -rf $TRAVIS_BUILD_DIR/build/glm
+ 
