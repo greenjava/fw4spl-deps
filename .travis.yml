@@ -29,6 +29,7 @@ before_script:
   - chmod a+x upload_script/travis-upload.sh
   - wget -q http://www.cmake.org/files/v3.3/cmake-3.3.0-Linux-x86_64.tar.gz -O /tmp/cmake-3.3.0-Linux-x86_64.tar.gz
   - tar -xvf /tmp/cmake-3.3.0-Linux-x86_64.tar.gz > /dev/null
+  - rm -rf /tmp/cmake-3.3.0-Linux-x86_64.tar.gz
   - export PATH=$PWD/cmake-3.3.0-Linux-x86_64/bin/:$PATH
   - mkdir install
   - mkdir build
@@ -85,8 +86,8 @@ script:
   #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make json-spirit/fast json-spirit.log
   #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/json-spirit
   
-after_success:
+after_script:
   - rm -rf /tmp/archive
-  - rm -rf $TRAVIS_TEST_RESULT/build
-  - tar -zcvf fw4spl_0.10.2-deps.tar.gz $TRAVIS_TEST_RESULT/install
-  - $TRAVIS_TEST_RESULT/upload_script/travis-upload.sh fw4spl_0.10.2-deps.tar.gz
+  - rm -rf $TRAVIS_BUILD_DIR/build
+  - tar -zcvf fw4spl_0.10.2-deps.tar.gz $TRAVIS_BUILD_DIR/install
+  - $TRAVIS_BUILD_DIR/upload_script/travis-upload.sh fw4spl_0.10.2-deps.tar.gz
