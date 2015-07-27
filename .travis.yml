@@ -25,6 +25,8 @@ before_script:
   - chmod a+x script_sh/cmd-travis.sh
   - git clone https://gist.github.com/aa8c2b4ca1cab41dc267.git script_py
   - chmod a+x script_py/clean-cmake-build.py
+  - git clone https://gist.github.com/a3ba75b69234af2e3c0e.git upload_script
+  - chmod a+x upload_script/travis-upload.sh
   - wget -q http://www.cmake.org/files/v3.3/cmake-3.3.0-Linux-x86_64.tar.gz -O /tmp/cmake-3.3.0-Linux-x86_64.tar.gz
   - tar -xvf /tmp/cmake-3.3.0-Linux-x86_64.tar.gz > /dev/null
   - export PATH=$PWD/cmake-3.3.0-Linux-x86_64/bin/:$PATH
@@ -36,28 +38,28 @@ before_script:
 script: 
   - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make jpeg/fast jpeg.log
   - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/jpeg
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make zlib/fast zlib.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/zlib
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make tiff/fast tiff.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/tiff
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libpng/fast libpng.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/png
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libiconv/fast libiconv.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/libiconv
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libxml/fast libxml.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/libxml
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make expat/fast expat.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/expat
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make python/fast python.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/python
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make boost/fast boost.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/boost
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make freetype/fast freetype.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/freetype
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make icu4c/fast icu4c.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/icu4c
-  - $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make numpy/fast numpy.log
-  - python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/numpy
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make zlib/fast zlib.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/zlib
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make tiff/fast tiff.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/tiff
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libpng/fast libpng.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/png
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libiconv/fast libiconv.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/libiconv
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make libxml/fast libxml.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/libxml
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make expat/fast expat.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/expat
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make python/fast python.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/python
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make boost/fast boost.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/boost
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make freetype/fast freetype.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/freetype
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make icu4c/fast icu4c.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/icu4c
+  #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make numpy/fast numpy.log
+  #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/numpy
   #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make qt/fast qt.log
   #- python $TRAVIS_BUILD_DIR/script_py/clean-cmake-build.py $TRAVIS_BUILD_DIR/build/qt
   #- $TRAVIS_BUILD_DIR/script_sh/cmd-travis.sh make vtk/fast vtk.log
@@ -85,8 +87,6 @@ script:
   
 after_success:
   - rm -rf /tmp/archive
-  - rm -rf $TRAVIS_BUILD_DIR/build
-  - tar -zcvf fw4spl_0.10.2-deps.tar.gz $TRAVIS_BUILD_DIR/install
-  - git clone https://gist.github.com/a3ba75b69234af2e3c0e.git upload_script
-  - chmod a+x upload_script/travis-upload.sh
-  - upload_script/travis-upload.sh fw4spl_0.10.2-deps.tar.gz
+  - rm -rf $TRAVIS_TEST_RESULT/build
+  - tar -zcvf fw4spl_0.10.2-deps.tar.gz $TRAVIS_TEST_RESULT/install
+  - $TRAVIS_TEST_RESULT/upload_script/travis-upload.sh fw4spl_0.10.2-deps.tar.gz
